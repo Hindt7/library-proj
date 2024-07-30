@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Library</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- Dialog containing form for Adding book -->
+    <dialog id="AddBookModal">
+        <form method="dialog">
+            <header>
+                <h1> Add book to library</h1>
+            </header>
+            <article>
+                <p class="field padding-bottom--20">
+                    <label class="textlabel" for="title">Book Title</label>
+                    <input id="title" type="text" name="title">
+                </p>
+
+                <p class="field padding-bottom--20">
+                    <label class="textlabel" for="author">Author</label>
+                    <input type="text" id="author" name="author">
+                </p>
+
+                <p class="field padding-bottom--20">
+                    <label class="textlabel" for="numberofpages">Number of pages (eg. 300)</label>
+                    <input class="inputnum" type="number" min="1" max="99999" id="numberofpages" name="numberofpages"><span style="padding-left: 10px;">pages</span>
+                </p>
+
+                <p>
+                    <label for="readstatus">Have you read the thing?</label>
+                    <input type="checkbox" id="readstatus" name="readstatus" value="read"><span style="padding-left: 10px;">Yes</span>
+                </p>
+            </article>
+            <footer>
+                <button autofocus type="button" onclick="this.closest('dialog').close('cancel')">Cancel</button>
+                <button type="submit" value="confirm" id="addBtn" class="btn-primary">Add Book</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <div class="page">
+        <div class="header">
+            <div class="pagename"> Virtual Library </div>
+            <button class="button-add" onclick="window.AddBookModal.showModal()" aria-label="Add book">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+            </svg>
+            Add book
+          </button>
+
+        </div>
+        <div class="wrapper">
+            <div class="book-cards">
+                <div class="book-card">
+                    <!-- This book card is a sample for testing display -->
+
+                    <svg xmlns="http://www.w3.org/2000/svg" height="18" width="15.75" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#874F41" d="M0 96C0 43 43 0 96 0l96 0 0 190.7c0 13.4 15.5 20.9 26 12.5L272 160l54 43.2c10.5 8.4 26 .9 26-12.5L352 0l32 0 32 0c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32l0 64c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0L96 512c-53 0-96-43-96-96L0 96zM64 416c0 17.7 14.3 32 32 32l256 0 0-64L96 384c-17.7 0-32 14.3-32 32z"/></svg>
+
+                    <div class="book-card-title">Quirkology</div>
+                    <div class="book-card-author">Richard Nielman</div>
+                    <div class="card-menu">
+                        <button class="menu-btn"><span class="menu-3-dot"></span></button>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="read-btn read">Remove Read status</a>
+                            <a class="deleteBook">Remove from library</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

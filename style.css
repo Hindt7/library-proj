@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --body-bg-color: #244855;
+    --secondary-color: #FBE9D0;
+    --btn-dark-color: #90AEAD;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100vh;
+    background-color: var(--body-bg-color);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 80px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.pagename {
+    font-family: "Abril Fatface", sans-serif;
+    font-size: 38px;
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    flex-grow: 1;
+    scroll-behavior: smooth;
+    padding: 30px 50px;
+    overflow: auto;
+}
+
+.book-cards {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+}
+
+.book-card {
+    padding: 20px 16px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.book-card-title {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.book-card-author {
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.book-card svg {
+    float: right;
+}
+
+.card-menu {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    min-width: 160px;
+    background-color: #f9f9f9;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    right: 0;
+    transition: height 1s ease;
+    visibility: hidden;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 10px 14px;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-menu.opened {
+    visibility: visible;
+}
+
+.menu-btn {
+    position: absolute;
+    width: 15px;
+    height: 30px;
+    margin-left: auto;
+    background: transparent;
+    right: 0px;
+    bottom: 0px;
+}
+
+.menu-3-dot {
+    display: inline-block;
+    background-color: var(--btn-dark-color);
+    box-shadow: 0 -6px 0 0 #aaaebc, 0 6px 0 0 #aaaebc;
+    width: 4px;
+    height: 4px;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 50%;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.button-add svg {
+    height: 20px;
+    width: 20px;
+}
+
+dialog {
+    display: grid;
+    align-content: start;
+    max-inline-size: 90vw;
+    margin: auto;
+    padding: 10px;
+    position: fixed;
+    inset: 0;
+    border-radius: 8px;
+    z-index: 9999;
+}
+
+dialog:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(25px);
+    transition: backdrop-filter 0.5s ease;
+}
+
+dialog[loading] {
+    visibility: hidden;
+}
+
+dialog>form {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: start;
+    margin: 0;
+    padding: 2rem;
+}
+
+dialog>form>header {
+    display: flex;
+    align-items: flex-start;
+    padding: 0 0 1.25rem;
+    margin: 0;
+}
+
+dialog>form>footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0;
+    padding: 1.85rem 0 0;
+}
+
+dialog>form>footer>button {
+    position: relative;
+    margin-left: 0.625rem;
+    padding: 0.625rem 1.25rem;
+    border: 2px solid;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+    z-index: 1;
+    background-color: transparent;
+}
+
+dialog>form>footer>.btn-primary {
+    background-color: #244855;
+    border-color: #244855;
+    color: #fff;
+}
+
+.padding-bottom--20 {
+    padding-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+.textlabel {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.field input {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 8px 16px;
+    width: 100%;
+    min-height: 40px;
+}
+
+.field input.inputnum {
+    width: 30%;
+}
